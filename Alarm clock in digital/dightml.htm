@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Alarm Clock</title>
+    <link rel="stylesheet" href="digistyle.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>00:00:00 AM</h1>
+
+        <form class="setAlarm">
+            <div class="set-alarm-field">
+                <input type="number" name="hr" placeholder="HH" max="12" min="1" required>
+                <input type="number" name="min" placeholder="MM" max="59" min="0" required>
+                <input type="number" name="sec" placeholder="SS" max="59" min="0" required>
+                <select name="ampm" required>
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+            <div class="buttons">
+                <button type="submit" class="set-alarm">Set Alarm</button>
+                <button type="reset" onclick="stopAlarm()" class="clear-alarm">Stop Alarm</button>
+            </div>
+        </form>
+
+        <h3 style="margin: 20px 0; color: white;">Upcoming Alarms</h3>
+        <div id="upcoming-alarms">
+            <ul id="upcoming-alarms-list">
+                <!-- The list item is added using javascript when set alarm button is pressed -->
+            </ul>
+        </div>
+    </div>
+
+    <audio id="alarm-audio" src="E:\HTML\Project\alarm clock in digital\tone\alarmtone.mp3" loop></audio>
+    <script src="alarmscript.js"></script>
+</body>
+</html>
